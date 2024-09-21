@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Var Selection</title>
+  </head>
+  <body>
+    <style>
+      :root {
+        --base: #ecd719;
+        --spacing: 10px;
+        --blur: 0px;
+      }
+
+      body {
+        min-height: 100vh;
+        background: #193549;
+        color: white;
+        text-align: center;
+        font-family: "helvetica neue", sans-serif;
+        font-weight: 100;
+        font-size: 50px;
+        padding-inline: 5rem;
+      }
+
+      .controls {
+        margin-bottom: 50px;
+      }
+
+      input {
+        width: 100px;
+        cursor: pointer;
+        padding-right: 0px;
+      }
+
+      span {
+        color: var(--base);
+        text-decoration: none;
+      }
+
+      img {
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+      }
+    </style>
+
+    <h2>Update CSS Variables with <span>JS</span></h2>
+    <div class="controls">
+      <label for="spacing">Spacing</label>
+      <input class="input"
+        name="spacing"
+        type="range"
+        min="10"
+        max="100"
+        value="10"
+        data-sizing="px"
+      />
+      <label for="blur">Blur</label>
+      <input class="input"
+        name="blur"
+        type="range"
+        min="0"
+        max="15"
+        value="0"
+        data-sizing="px"
+      />
+      <label for="base">Color</label>
+      <input class="input" name="base" type="color" value="#ffc600"/>
+    </div>
+    <img src="http://unsplash.it/800" alt="" />
+  </body>
+  <script src="script.js"></script>
+</html>
