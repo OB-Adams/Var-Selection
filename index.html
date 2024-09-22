@@ -22,6 +22,10 @@
         font-weight: 100;
         font-size: 50px;
         padding-inline: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       .controls {
@@ -39,10 +43,55 @@
         text-decoration: none;
       }
 
+      .img-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 800px;
+      }
+
       img {
         padding: var(--spacing);
         background: var(--base);
         filter: blur(var(--blur));
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Media query for smaller screens */
+      @media (max-width: 768px) {
+        body {
+          font-size: 40px;
+          padding-inline: 2rem;
+        }
+
+        input {
+          width: 80px;
+        }
+        
+        .img-container {
+            width: 95%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          font-size: 30px;
+          padding-inline: 1rem;
+        }
+
+        input {
+          width: 60px;
+        }
+
+        .img-container {
+            width: 85%;
+        }
+
+        .controls {
+          margin-bottom: 30px;
+        }
       }
     </style>
 
@@ -67,9 +116,13 @@
         data-sizing="px"
       />
       <label for="base">Color</label>
-      <input class="input" name="base" type="color" value="#ffc600"/>
+      <input class="input" name="base" type="color" value="#ffc600" />
     </div>
-    <img src="http://unsplash.it/800" alt="" />
+
+    <div class="img-container">
+      <img src="http://unsplash.it/800" alt="" />
+    </div>
+
   </body>
   <script src="script.js"></script>
 </html>
